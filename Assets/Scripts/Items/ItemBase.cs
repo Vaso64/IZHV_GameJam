@@ -7,9 +7,9 @@ namespace GameJam.Items
     [RequireComponent(typeof(Rigidbody))]
     public class ItemBase : MonoBehaviour, IGrabbable
     {
-        public new Rigidbody rigidbody { get; private set; }
+        public new Rigidbody rigidbody { get; protected set; }
 
-        private void Awake()
+        protected virtual void Awake()
         {
             rigidbody = GetComponent<Rigidbody>();
             

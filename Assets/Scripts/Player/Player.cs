@@ -1,11 +1,11 @@
 using System;
+using System.Collections;
 using GameJam.Input;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace GameJam.Player
 {
-    [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(Rigidbody), typeof(Battery))]
     public class Player : MonoBehaviour
     {
         [Range(0, 5)]
@@ -16,6 +16,7 @@ namespace GameJam.Player
 
         private Rigidbody _rigidbody;
         private Transform _cameraPivot;
+        [HideInInspector] public Battery battery;
         
     
         private void Start()
@@ -23,6 +24,9 @@ namespace GameJam.Player
             // Get references
             _rigidbody = GetComponent<Rigidbody>();
             _cameraPivot = GetComponentInChildren<Camera>().transform;
+            battery = GetComponent<Battery>();
+
+            StartCoroutine(Oxygen());
         }
     
         private void Update()
@@ -37,6 +41,12 @@ namespace GameJam.Player
             
             // Rotate by joystick
             _rigidbody.MoveRotation(_rigidbody.rotation * Quaternion.Euler(0, InputManager.Rotate.ReadValue<Vector2>().x * rotateSpeed * Time.fixedDeltaTime, 0));
+        }
+        
+        private IEnumerator Oxygen()
+        {
+            while (battery.TryDischarge(0.5f))
+                yield return new WaitForSeconds(1);
         }
     }
 }

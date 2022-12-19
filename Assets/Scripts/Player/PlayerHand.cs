@@ -14,11 +14,12 @@ namespace GameJam.Player
     {
         [SerializeField] private Side handSide;
         
-        private ConfigurableJoint bodyJoint;
-        private ConfigurableJoint grabJoint;
         private Rigidbody rb;
+        private Player player;
         private HandInput handInput;
         
+        private ConfigurableJoint bodyJoint;
+        private ConfigurableJoint grabJoint;
         private readonly List<IGrabbable> grabVicinity = new();
         private readonly List<Collider> staticVicinity = new();
         private IGrabbable grabbedItem;
@@ -28,6 +29,9 @@ namespace GameJam.Player
             // Get references
             this.bodyJoint = GetComponent<ConfigurableJoint>();
             this.rb = GetComponent<Rigidbody>();
+            this.player = GetComponentInParent<Player>();
+            
+            // Get hand input
             switch (handSide)
             {
                 case Side.Left:  handInput = InputManager.LeftHand; break;
@@ -37,16 +41,8 @@ namespace GameJam.Player
             // Register events
             handInput.grab.started += _ => Grab();
             handInput.grab.canceled += _ => Release();
-            handInput.use.started += _ =>
-            {
-                if (grabbedItem is IUsable usable) 
-                    usable.Use();
-            };
-            handInput.use.canceled += _ =>
-            {
-                if (grabbedItem is IUsable usable) 
-                    usable.StopUse();
-            };
+            handInput.use.started += _ => Use();
+            handInput.use.canceled += _ => StopUse();
         }   
 
         private void FixedUpdate()
@@ -56,7 +52,7 @@ namespace GameJam.Player
             bodyJoint.targetPosition = handInput.position.ReadValue<Vector3>() - InputManager.Head.position.ReadValue<Vector3>();
 
             // Boost
-            if (handInput.boost.IsPressed())
+            if (handInput.boost.IsPressed() && player.battery.TryDischarge(0.1f))
                 rb.AddForce(transform.forward * 10);
         }
         
@@ -103,6 +99,32 @@ namespace GameJam.Player
             // Notify grabbed item
             grabbedItem?.OnRelease();
             grabbedItem = null;
+        }
+
+        private void Use()
+        {
+            switch (grabbedItem)
+            {
+                case IUsable usable: 
+                    usable.Use();
+                    break;
+                case IUsablePowered usablePowered: 
+                    usablePowered.Use(player.battery);
+                    break;
+            }
+        }
+
+        private void StopUse()
+        {
+            switch (grabbedItem)
+            {
+                case IUsable usable: 
+                    usable.StopUse();
+                    break;
+                case IUsablePowered usablePowered: 
+                    usablePowered.StopUse();
+                    break;
+            }
         }
 
         private void OnTriggerEnter(Collider other)

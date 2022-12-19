@@ -1,12 +1,13 @@
-﻿using UnityEngine;
+﻿using GameJam.Player;
+using UnityEngine;
 
 namespace GameJam.Items
 {
-    public class TestItem : ItemBase, IUsable
+    public class TestItem : ItemBase, IUsablePowered
     {
         public void OnGrab()
         {
-            GetComponent<Renderer>().material.color = Color.red;
+            GetComponent<Renderer>().material.color = Color.gray;
         }
         
         public void OnRelease()
@@ -14,14 +15,12 @@ namespace GameJam.Items
             GetComponent<Renderer>().material.color = Color.white;
         }
         
-        public void Use()
+        public void Use(Battery battery)
         {
-            GetComponent<Renderer>().material.color = Random.ColorHSV();
-        }
-        
-        public void StopUse()
-        {
-            GetComponent<Renderer>().material.color = Color.black;
+            if (battery.TryDischarge(100f))
+                GetComponent<Renderer>().material.color = Random.ColorHSV();
+            else
+                GetComponent<Renderer>().material.color = Color.red;
         }
     }
 }
