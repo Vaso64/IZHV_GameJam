@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 namespace GameJam.Items
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class ItemBase : MonoBehaviour, IGrabbable
+    public class GrabItem : MonoBehaviour, IGrabbable
     {
         public new Rigidbody rigidbody { get; protected set; }
 

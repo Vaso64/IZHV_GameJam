@@ -8,5 +8,6 @@ namespace GameJam.Items
         public Color Color;
         public float Velocity;
         public float LifeSpan;
+        public Vector3 ShootOffset;
     }
 }

@@ -17,6 +17,7 @@ namespace GameJam.Player
         private Rigidbody rb;
         private Player player;
         private HandInput handInput;
+        private Collider handCollider;
         
         private ConfigurableJoint bodyJoint;
         private ConfigurableJoint grabJoint;
@@ -30,6 +31,7 @@ namespace GameJam.Player
             this.bodyJoint = GetComponent<ConfigurableJoint>();
             this.rb = GetComponent<Rigidbody>();
             this.player = GetComponentInParent<Player>();
+            this.handCollider = GetComponent<Collider>();
             
             // Get hand input
             switch (handSide)
@@ -68,6 +70,8 @@ namespace GameJam.Player
                 grabJoint.swapBodies = true;
                 grabJoint.connectedBody = rb;
                 grabJoint.massScale = 1/100f;
+                foreach (var grabbedItemCollider in grabbedItem.gameObject.GetComponentsInChildren<Collider>())
+                    Physics.IgnoreCollision(handCollider, grabbedItemCollider);
                 grabbedItem.OnGrab();
             }
 
@@ -97,8 +101,13 @@ namespace GameJam.Player
             grabJoint = null;
 
             // Notify grabbed item
-            grabbedItem?.OnRelease();
-            grabbedItem = null;
+            if(grabbedItem != null)
+            {
+                foreach (var grabbedItemCollider in grabbedItem.gameObject.GetComponentsInChildren<Collider>())
+                    Physics.IgnoreCollision(handCollider, grabbedItemCollider, false);
+                grabbedItem.OnRelease();
+                grabbedItem = null;
+            }
         }
 
         private void Use()

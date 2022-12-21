@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8061827512371108280}
   - component: {fileID: 2133579944739518437}
   - component: {fileID: 3996868612980089244}
-  - component: {fileID: 50270421479764162}
-  - component: {fileID: 961989205}
+  - component: {fileID: 512276982}
+  - component: {fileID: 512276981}
   m_Layer: 0
   m_Name: EnergyBall
   m_TagString: Untagged
@@ -8548,7 +8548,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 44
+  m_VersionIndex: 62
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8603,7 +8603,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 662758395253796297}
   m_Mesh: {fileID: 0}
---- !u!108 &50270421479764162
+--- !u!108 &512276982
 Light:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8614,9 +8614,9 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.12878752, g: 1, b: 0, a: 1}
-  m_Intensity: 47.746483
-  m_Range: 4
+  m_Color: {r: 0.04431629, g: 1, b: 0, a: 1}
+  m_Intensity: 10.345071
+  m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -8663,9 +8663,9 @@ Light:
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 10
+  m_ShadowRadius: 0.5
   m_ShadowAngle: 0
---- !u!114 &961989205
+--- !u!114 &512276981
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8677,7 +8677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 600
+  m_Intensity: 130
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -8693,7 +8693,7 @@ MonoBehaviour:
   m_ShapeWidth: 0.5
   m_ShapeHeight: 0.5
   m_AspectRatio: 1
-  m_ShapeRadius: 10
+  m_ShapeRadius: 0.5
   m_SoftnessScale: 1
   m_UseCustomSpotLightShadowCone: 0
   m_CustomSpotLightShadowCone: 30
@@ -8800,7 +8800,7 @@ GameObject:
   - component: {fileID: 2605711982013097059}
   - component: {fileID: 7538404467232376454}
   m_Layer: 0
-  m_Name: Glass
+  m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11143,7 +11143,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 806
+  m_VersionIndex: 824
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -11168,7 +11168,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3baf5a01c79d9c244b1bd16ab1cfe427, type: 2}
+  - {fileID: 2100000, guid: 046d63d2ab45d4a268ad613744852fc9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11292,7 +11292,7 @@ GameObject:
   - component: {fileID: 3242259116565823602}
   - component: {fileID: 9115593694537568980}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12489,7 +12489,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1067
+  m_VersionIndex: 1085
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []

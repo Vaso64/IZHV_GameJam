@@ -18,6 +18,8 @@ namespace GameJam.Player
         private Transform _cameraPivot;
         [HideInInspector] public Battery battery;
         
+        private Vector3 prevHmdPos;
+        
     
         private void Start()
         {
@@ -41,6 +43,11 @@ namespace GameJam.Player
             
             // Rotate by joystick
             _rigidbody.MoveRotation(_rigidbody.rotation * Quaternion.Euler(0, InputManager.Rotate.ReadValue<Vector2>().x * rotateSpeed * Time.fixedDeltaTime, 0));
+            
+            // Move by HMD
+            var hmdPos = InputManager.Head.position.ReadValue<Vector3>();
+            _rigidbody.MovePosition(_rigidbody.position + _rigidbody.rotation * (hmdPos - prevHmdPos));
+            prevHmdPos = hmdPos;
         }
         
         private IEnumerator Oxygen()

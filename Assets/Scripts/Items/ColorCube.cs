@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace GameJam.Items
 {
-    public class TestItem : ItemBase, IUsablePowered
+    public class ColorCube : GrabItem, IUsablePowered
     {
         public void OnGrab()
         {

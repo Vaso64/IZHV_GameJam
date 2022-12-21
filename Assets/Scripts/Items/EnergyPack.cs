@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace GameJam.Items
 {
-    public class EnergyPack : ItemBase, IUsablePowered
+    public class EnergyPack : GrabItem, IUsablePowered
     {
         public float EnergyAmount;
 
@@ -18,7 +18,7 @@ namespace GameJam.Items
             
             battery.Charge(EnergyAmount);   
             energyBallIndicator.GetComponent<Light>().enabled = false;
-            energyBallIndicator.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
+            energyBallIndicator.GetComponent<Renderer>().material.SetFloat("_EmissiveIntensity", 1);
             used = true;
         }
     }
