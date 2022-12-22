@@ -44,7 +44,7 @@ namespace GameJam.Input
                 grab = vrActions.RightControllerGrab,
                 boost = vrActions.RightControllerBoost
             };
-            
+
             Rotate = vrActions.Rotate;
 
         }

@@ -217,7 +217,18 @@ namespace GameJam.Input
                 {
                     ""name"": """",
                     ""id"": ""0a799290-7997-4ecb-ac15-adbacbc35e47"",
-                    ""path"": ""<XRController>{RightHand}/touchpadTouched"",
+                    ""path"": ""<XRController>{RightHand}/primaryButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RightControllerBoost"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""35b3e703-9e01-4b56-97f2-589d3c4aa835"",
+                    ""path"": ""<XRController>{RightHand}/touchpadClicked"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -284,6 +295,17 @@ namespace GameJam.Input
                     ""name"": """",
                     ""id"": ""ece1927a-ead6-4a3c-a07f-2ee154656c51"",
                     ""path"": ""<XRController>{RightHand}/joystick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""256c4fcc-85ba-4d21-99c4-42bccc754c4e"",
+                    ""path"": ""<ViveWand>{RightHand}/trackpad"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

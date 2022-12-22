@@ -32,6 +32,13 @@ namespace GameJam.Player
             _cameraPivot = GetComponentInChildren<Camera>().transform;
             battery = GetComponent<Battery>();
 
+            // Dont collide with self
+            var playerColliders = GetComponentsInChildren<Collider>();
+            foreach (var playerColliderA in playerColliders)
+            foreach (var playerColliderB in playerColliders)
+                if(playerColliderA != playerColliderB)
+                    Physics.IgnoreCollision(playerColliderA, playerColliderB);
+
             StartCoroutine(PassiveDrain());
         }
 

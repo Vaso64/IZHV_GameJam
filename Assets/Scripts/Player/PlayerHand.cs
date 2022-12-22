@@ -13,6 +13,7 @@ namespace GameJam.Player
     public class PlayerHand : MonoBehaviour
     {
         [SerializeField] private Side handSide;
+        [SerializeField] private MeshRenderer boostIndicator;
         
         private Rigidbody rb;
         private Player player;
@@ -22,8 +23,10 @@ namespace GameJam.Player
         private ConfigurableJoint bodyJoint;
         private ConfigurableJoint grabJoint;
         private readonly List<IGrabbable> grabVicinity = new();
-        private readonly List<Collider> staticVicinity = new();
+        private readonly List<Collider> vicinity = new();
         private IGrabbable grabbedItem;
+        
+        
 
         private void Start()
         {
@@ -45,6 +48,8 @@ namespace GameJam.Player
             handInput.grab.canceled += _ => Release();
             handInput.use.started += _ => Use();
             handInput.use.canceled += _ => StopUse();
+            handInput.boost.started += _ => StartBoost();
+            handInput.boost.canceled += _ => StopBoost();
         }   
 
         private void FixedUpdate()
@@ -58,6 +63,9 @@ namespace GameJam.Player
                 rb.AddForce(transform.forward * 10);
         }
         
+        private void StartBoost() => boostIndicator.material.SetColor("_EmissiveColor", Color.green);
+        private void StopBoost() =>  boostIndicator.material.SetColor("_EmissiveColor", Color.black);
+
         private void Grab()
         {
             Release();
@@ -76,7 +84,7 @@ namespace GameJam.Player
             }
 
             // Grab static
-            else if (staticVicinity.Any())
+            else if (vicinity.Any())
                 grabJoint = gameObject.AddComponent<ConfigurableJoint>();
 
             // Nothing to grab
@@ -140,16 +148,16 @@ namespace GameJam.Player
         {
             if (other.TryGetComponent(out IGrabbable grabbable))
                 grabVicinity.Add(grabbable);
-            else if (other.gameObject.isStatic)
-                staticVicinity.Add(other);
+            else
+                vicinity.Add(other);
         }
         
         private void OnTriggerExit(Collider other)
         {
             if (other.TryGetComponent(out IGrabbable grabbable))
                 grabVicinity.Remove(grabbable);
-            else if (other.gameObject.isStatic)
-                staticVicinity.Remove(other);
+            else
+                vicinity.Remove(other);
         }
     }
 }

@@ -5,20 +5,20 @@ using GameJam.Input;
 
 namespace GameJam.UI
 {
-    [RequireComponent(typeof(LineRenderer))]
     public class UIRayInteractor : MonoBehaviour
     {
+        [SerializeField] private Transform ray;
+        
         private static UIBase prevHoveredUI;
         private static UIBase currentHoveredUI;
-        private static LineRenderer line;
 
         private static bool isClickDown;
+        
         
         private void Start()
         {
             InputManager.RightHand.use.canceled += _ => ClickUp();
             InputManager.RightHand.use.started += _ => ClickDown();
-            line = GetComponent<LineRenderer>();
         }
 
         public void Update()
@@ -27,8 +27,7 @@ namespace GameJam.UI
             var hitIsUi = isHit && hit.transform.CompareTag("UI");
 
             // Show ray on UI
-            line.SetPosition(0, transform.position);
-            line.SetPosition(1, hitIsUi ? hit.point: transform.position);
+            ray.localScale = new Vector3(ray.localScale.x, hitIsUi ? Vector3.Distance(hit.point, transform.position) : 0, ray.localScale.z);
 
             if (!isClickDown)
                 currentHoveredUI = hitIsUi ? hit.transform.GetComponentInParent<UIBase>() : null;
