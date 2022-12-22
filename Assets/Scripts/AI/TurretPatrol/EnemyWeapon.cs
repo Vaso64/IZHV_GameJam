@@ -17,7 +17,7 @@ namespace GameJam.AI
         {
             var player = other.GetComponentInParent<Player.Player>();
             if(player != null)
-                player.battery.TryDischarge(damage);
+                player.battery.Discharge(damage);
         }
     }
 }

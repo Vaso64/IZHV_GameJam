@@ -8573,7 +8573,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f49dcf51f09fe9749925533191693dfb, type: 2}
+  - {fileID: 2100000, guid: 0438367df22621e42b24818b135019bd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8614,7 +8614,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.04431629, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.80982494, b: 0, a: 1}
   m_Intensity: 10.345071
   m_Range: 10
   m_SpotAngle: 30
@@ -11207,11 +11207,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2267239715645864917}
+  - component: {fileID: 1679417152002468586}
   - component: {fileID: 7027881311017198075}
-  - component: {fileID: 7027881311017198074}
   - component: {fileID: 7027881311017198073}
   m_Layer: 0
-  m_Name: EnergyPack
+  m_Name: WinItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11235,6 +11235,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1679417152002468586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5481263336997804819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65b5451a4ce64ee2bd5fa1182df991df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &7027881311017198075
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11251,20 +11263,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7027881311017198074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5481263336997804819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff61e043e88c4eb3b1ff616426e6d718, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EnergyAmount: 500
-  energyBallIndicator: {fileID: 662758395253796297}
 --- !u!136 &7027881311017198073
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -4,20 +4,23 @@ using GameJam.Player;
 using TMPro;
 using UnityEngine;
 
-
-[RequireComponent(typeof(TextMeshPro))]
-public class BatteryIndicator : MonoBehaviour
+namespace GameJam.UI
 {
-    [SerializeField] private Battery battery;
-    private TextMeshPro textIndicator;
-
-    private void Start()
+    [RequireComponent(typeof(TextMeshPro))]
+    public class BatteryIndicator : MonoBehaviour
     {
-        textIndicator = GetComponent<TextMeshPro>();
-    }
+        [SerializeField] private Battery battery;
+        private TextMeshPro textIndicator;
 
-    private void Update()
-    {
-        textIndicator.text = $"{battery.currentEnergy:F} / {battery.maxEnergy}";
+        private void Start()
+        {
+            textIndicator = GetComponent<TextMeshPro>();
+        }
+
+        private void Update()
+        {
+            textIndicator.text = $"{battery.currentEnergy:F} / {battery.maxEnergy}";
+        }
     }
 }
+

@@ -29,9 +29,9 @@ namespace GameJam.Player
             return true;
         }
         
-        public void ForceDischarge(float amount)
+        public void Discharge(float amount)
         {
-            currentEnergy -= Mathf.Clamp(currentEnergy - amount, 0, maxEnergy);
+            currentEnergy = Mathf.Clamp(currentEnergy - amount, 0, maxEnergy);
         }
     }
 }
