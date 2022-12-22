@@ -8,6 +8,6 @@ namespace GameJam.Global
     {
         public GameObject levelPrefab;
         public string name;
-        public Image image;
+        public Texture image;
     }
 }

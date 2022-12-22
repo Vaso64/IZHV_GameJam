@@ -1351,7 +1351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 4079813119153414582, guid: 0ea8a5826cc19a5439d00a1aee171f08, type: 3}
-  shootSound: {fileID: 0}
+  shootSound: {fileID: 8300000, guid: 0438aa6392711ba40a97bab4afe889cf, type: 3}
   projectileProperties:
     Color: {r: 0.9716981, g: 0.44386473, b: 0, a: 0}
     Velocity: 8
@@ -10134,11 +10134,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b2e03638cccfd624aaac52a1fec38503, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

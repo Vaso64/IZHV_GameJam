@@ -237,7 +237,18 @@
                 {
                     "name": "",
                     "id": "85bd0fd9-b09c-4c86-a61c-09ae86fbc37b",
-                    "path": "<XRController>{LeftHand}/touchpadTouched",
+                    "path": "<XRController>{LeftHand}/touchpadClicked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftControllerBoost",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dde93664-95d7-4bbe-9c0e-fa58414c01d9",
+                    "path": "<XRController>{LeftHand}/primaryButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

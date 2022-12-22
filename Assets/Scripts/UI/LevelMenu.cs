@@ -38,7 +38,7 @@ namespace GameJam.UI
         
         private void SelectLevel(Level level)
         {
-            //levelImage.texture = level.image.mainTexture;
+            levelImage.texture = level.image;
             levelName.text = level.name;
             playButton.OnClickUp.SetListener(() => GlobalReferences.GameLoop.StartLevel(level));
         }
