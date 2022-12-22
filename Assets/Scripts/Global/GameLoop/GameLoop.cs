@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.HighDefinition;
@@ -8,14 +7,9 @@ namespace GameJam.Global
 {
     public class GameLoop : MonoBehaviour
     {
-        
-        private Level currentLevel;
         private GameObject currentLevelInstance;
-        
-        private void Start()
-        {
-            ToMenu();
-        }
+
+        private void Start() => ToMenu();
 
         public IEnumerator Win()
         {
@@ -58,7 +52,6 @@ namespace GameJam.Global
         {
             if(currentLevelInstance != null)
                 Destroy(currentLevelInstance);
-            currentLevel = level;
             currentLevelInstance = Instantiate(level.levelPrefab);
             FromMenu();
         }

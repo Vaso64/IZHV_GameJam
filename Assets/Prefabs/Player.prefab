@@ -1445,7 +1445,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2488
+  m_VersionIndex: 2500
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1553,6 +1553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handSide: 1
   boostIndicator: {fileID: 261401254}
+  boostSound: {fileID: 8300000, guid: 0fbc508e9a33ea946b1e196c4e0f113e, type: 3}
 --- !u!114 &1855481921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1743,6 +1744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handSide: 0
   boostIndicator: {fileID: 1471057120949251267}
+  boostSound: {fileID: 8300000, guid: 0fbc508e9a33ea946b1e196c4e0f113e, type: 3}
 --- !u!54 &5937004350926422907
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2711,6 +2713,7 @@ GameObject:
   - component: {fileID: 7706869378353318961}
   - component: {fileID: 7706869378353318967}
   - component: {fileID: 7706869378353318966}
+  - component: {fileID: 6208148245808050579}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2794,6 +2797,14 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.125
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!81 &6208148245808050579
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7706869378353318922}
+  m_Enabled: 1
 --- !u!1 &7706869378407468477
 GameObject:
   m_ObjectHideFlags: 0
@@ -3008,7 +3019,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3111552263460788308, guid: 777f09dde76822f4db5f41f592f03953, type: 3}
       propertyPath: m_VersionIndex
-      value: 5627
+      value: 5639
       objectReference: {fileID: 0}
     - target: {fileID: 3111552263460788308, guid: 777f09dde76822f4db5f41f592f03953, type: 3}
       propertyPath: m_SelectedEdges.Array.size
@@ -3102,7 +3113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3111552263460788308, guid: 777f09dde76822f4db5f41f592f03953, type: 3}
       propertyPath: m_VersionIndex
-      value: 5624
+      value: 5636
       objectReference: {fileID: 0}
     - target: {fileID: 3111552263460788308, guid: 777f09dde76822f4db5f41f592f03953, type: 3}
       propertyPath: m_SelectedEdges.Array.size

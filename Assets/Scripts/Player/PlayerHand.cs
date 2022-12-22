@@ -9,11 +9,12 @@ using UnityEngine.InputSystem;
 
 namespace GameJam.Player
 {
-    [RequireComponent(typeof(ConfigurableJoint))]
+    [RequireComponent(typeof(ConfigurableJoint), typeof(AudioSource))]
     public class PlayerHand : MonoBehaviour
     {
         [SerializeField] private Side handSide;
         [SerializeField] private MeshRenderer boostIndicator;
+        [SerializeField] private AudioClip boostSound;
         
         private Rigidbody rb;
         private Player player;
@@ -25,7 +26,7 @@ namespace GameJam.Player
         private readonly List<IGrabbable> grabVicinity = new();
         private readonly List<Collider> vicinity = new();
         private IGrabbable grabbedItem;
-        
+        private AudioSource audioSource;
         
 
         private void Start()
@@ -35,6 +36,8 @@ namespace GameJam.Player
             this.rb = GetComponent<Rigidbody>();
             this.player = GetComponentInParent<Player>();
             this.handCollider = GetComponent<Collider>();
+            this.audioSource = GetComponent<AudioSource>();
+            audioSource.clip = boostSound;
             
             // Get hand input
             switch (handSide)
@@ -63,8 +66,17 @@ namespace GameJam.Player
                 rb.AddForce(transform.forward * 10);
         }
         
-        private void StartBoost() => boostIndicator.material.SetColor("_EmissiveColor", Color.green);
-        private void StopBoost() =>  boostIndicator.material.SetColor("_EmissiveColor", Color.black);
+        private void StartBoost()
+        {
+            audioSource.Play();
+            boostIndicator.material.SetColor("_EmissiveColor", Color.green);
+        }
+
+        private void StopBoost()
+        {
+            audioSource.Stop();
+            boostIndicator.material.SetColor("_EmissiveColor", Color.black);
+        }
 
         private void Grab()
         {

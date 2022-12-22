@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 namespace GameJam.AI
 {
-    [RequireComponent(typeof(Light), typeof(EnemyWeapon))]
+    [RequireComponent(typeof(Light), typeof(EnemyWeapon), typeof(AudioSource))]
     public class TurretPatrol : EnemyBase
     {
         public float patrolAngle;
@@ -14,16 +14,19 @@ namespace GameJam.AI
         public float spotRange;
     
         private Quaternion patrolRotation;
+        private Quaternion targetRotation;
         
         private Light spotLight;
         private EnemyWeapon weapon;
         private Player.Player player;
+        private AudioSource audioSource;
 
         private void Awake()
         {
             spotLight = GetComponent<Light>();
             weapon = GetComponent<EnemyWeapon>();
             weapon.ignoreColliders.AddRange(GetComponentsInChildren<Collider>());
+            audioSource = GetComponent<AudioSource>();
 
             StateList = new()
             {
