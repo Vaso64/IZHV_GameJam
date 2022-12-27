@@ -7965,6 +7965,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4325720972738081258, guid: 4dd770bff8022eb42bcb0771dff6b982, type: 3}
+      propertyPath: spotAngle
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4325720972738081258, guid: 4dd770bff8022eb42bcb0771dff6b982, type: 3}
       propertyPath: spotRange
       value: 20
       objectReference: {fileID: 0}
@@ -8031,6 +8035,14 @@ PrefabInstance:
     - target: {fileID: 4325720972738081263, guid: 4dd770bff8022eb42bcb0771dff6b982, type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4325720972738081296, guid: 4dd770bff8022eb42bcb0771dff6b982, type: 3}
+      propertyPath: m_Intensity
+      value: 687.74585
+      objectReference: {fileID: 0}
+    - target: {fileID: 4325720972738081296, guid: 4dd770bff8022eb42bcb0771dff6b982, type: 3}
+      propertyPath: m_SpotAngle
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 4325720972738081298, guid: 4dd770bff8022eb42bcb0771dff6b982, type: 3}
       propertyPath: m_Name
@@ -8338,7 +8350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4325720972738081258, guid: 4dd770bff8022eb42bcb0771dff6b982, type: 3}
       propertyPath: patrolAngle
-      value: 70
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4325720972738081259, guid: 4dd770bff8022eb42bcb0771dff6b982, type: 3}
       propertyPath: m_RootOrder
@@ -9632,7 +9644,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4325720972738081258, guid: 4dd770bff8022eb42bcb0771dff6b982, type: 3}
       propertyPath: patrolAngle
-      value: 70
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4325720972738081259, guid: 4dd770bff8022eb42bcb0771dff6b982, type: 3}
       propertyPath: m_RootOrder
@@ -9738,7 +9750,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4325720972738081258, guid: 4dd770bff8022eb42bcb0771dff6b982, type: 3}
       propertyPath: patrolAngle
-      value: 70
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4325720972738081259, guid: 4dd770bff8022eb42bcb0771dff6b982, type: 3}
       propertyPath: m_RootOrder
@@ -10379,12 +10391,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4325720972738081258, guid: 4dd770bff8022eb42bcb0771dff6b982, type: 3}
+      propertyPath: spotAngle
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4325720972738081258, guid: 4dd770bff8022eb42bcb0771dff6b982, type: 3}
       propertyPath: spotRange
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4325720972738081258, guid: 4dd770bff8022eb42bcb0771dff6b982, type: 3}
       propertyPath: patrolAngle
-      value: 45
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4325720972738081259, guid: 4dd770bff8022eb42bcb0771dff6b982, type: 3}
       propertyPath: m_RootOrder
@@ -10445,6 +10461,14 @@ PrefabInstance:
     - target: {fileID: 4325720972738081263, guid: 4dd770bff8022eb42bcb0771dff6b982, type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4325720972738081296, guid: 4dd770bff8022eb42bcb0771dff6b982, type: 3}
+      propertyPath: m_Intensity
+      value: 934.1672
+      objectReference: {fileID: 0}
+    - target: {fileID: 4325720972738081296, guid: 4dd770bff8022eb42bcb0771dff6b982, type: 3}
+      propertyPath: m_SpotAngle
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4325720972738081298, guid: 4dd770bff8022eb42bcb0771dff6b982, type: 3}
       propertyPath: m_Name

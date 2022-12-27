@@ -166,12 +166,14 @@ namespace GameJam.AI
             var newRot = Quaternion.RotateTowards(transform.rotation, rotation, rotateSpeed * Time.deltaTime);
             
             // Clamp to patrol angle
-            if (Vector3.Angle(newRot * Vector3.forward, patrolRotation * Vector3.forward) <= patrolAngle / 2)
+            var newRotAngle = Vector3.Angle(newRot * Vector3.forward, patrolRotation * Vector3.forward);
+            var currentAngle = Vector3.Angle(transform.rotation * Vector3.forward, patrolRotation * Vector3.forward);
+            if (newRotAngle <= patrolAngle / 2 || newRotAngle < currentAngle)
             {
                 transform.rotation = newRot;
                 return true;
             }
-            
+
             return false;
         }
 

@@ -4543,7 +4543,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4325720972738081258, guid: 4dd770bff8022eb42bcb0771dff6b982, type: 3}
       propertyPath: patrolAngle
-      value: 70
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 4325720972738081259, guid: 4dd770bff8022eb42bcb0771dff6b982, type: 3}
       propertyPath: m_RootOrder
@@ -4649,7 +4649,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4325720972738081258, guid: 4dd770bff8022eb42bcb0771dff6b982, type: 3}
       propertyPath: patrolAngle
-      value: 70
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 4325720972738081259, guid: 4dd770bff8022eb42bcb0771dff6b982, type: 3}
       propertyPath: m_RootOrder
@@ -4759,7 +4759,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4325720972738081258, guid: 4dd770bff8022eb42bcb0771dff6b982, type: 3}
       propertyPath: patrolAngle
-      value: 70
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 4325720972738081259, guid: 4dd770bff8022eb42bcb0771dff6b982, type: 3}
       propertyPath: m_RootOrder
