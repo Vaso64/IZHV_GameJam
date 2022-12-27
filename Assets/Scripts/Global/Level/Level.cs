@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.ProBuilder.Shapes;
 using UnityEngine.UI;
 
 namespace GameJam.Global
@@ -9,5 +10,6 @@ namespace GameJam.Global
         public GameObject levelPrefab;
         public string name;
         public Texture image;
+        public Cubemap skybox;
     }
 }

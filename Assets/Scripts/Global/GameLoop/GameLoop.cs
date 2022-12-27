@@ -55,6 +55,9 @@ namespace GameJam.Global
             if(currentLevelInstance != null)
                 Destroy(currentLevelInstance);
             currentLevelInstance = Instantiate(level.levelPrefab);
+            FindObjectOfType<Volume>().sharedProfile.TryGet(out HDRISky sky);
+            sky.hdriSky.value = level.skybox;
+            
             FromMenu();
         }
         
