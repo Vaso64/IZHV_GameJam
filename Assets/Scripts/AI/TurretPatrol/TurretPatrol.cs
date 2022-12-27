@@ -21,6 +21,8 @@ namespace GameJam.AI
         private Player.Player player;
         private AudioSource audioSource;
 
+        private void OnValidate() => GetComponent<Light>().spotAngle = spotAngle;
+
         private void Awake()
         {
             spotLight = GetComponent<Light>();
@@ -62,8 +64,8 @@ namespace GameJam.AI
         private bool IsPlayerSpotted()
         {
             var playerDirection = player.transform.position - transform.position;
-            return Vector3.Angle(transform.forward, playerDirection) < spotAngle
-                   && Physics.Raycast(transform.position, playerDirection, out var hit, spotRange, ~LayerMask.GetMask("Projectile"))
+            return Vector3.Angle(transform.forward, playerDirection) < spotAngle / 2
+                   && Physics.Raycast(transform.position, playerDirection, out var hit, spotRange, ~LayerMask.GetMask("Turret"))
                    && hit.collider.CompareTag("Player");
         }
 
@@ -119,8 +121,10 @@ namespace GameJam.AI
             var directionRotation = Quaternion.LookRotation(direction);
             while (Vector3.Angle(transform.forward, direction) > 0.1f)
             {
-                RotateTurretStep(directionRotation, rotateSpeed);
-                yield return null;
+                if(RotateTurretStep(directionRotation, rotateSpeed))
+                    yield return null;
+                else
+                    break;
             }
         }
         
@@ -157,13 +161,18 @@ namespace GameJam.AI
             return target.position + target.velocity * timeToHit;
         }
 
-        private void RotateTurretStep(Quaternion rotation, float rotateSpeed)
+        private bool RotateTurretStep(Quaternion rotation, float rotateSpeed)
         {
             var newRot = Quaternion.RotateTowards(transform.rotation, rotation, rotateSpeed * Time.deltaTime);
             
             // Clamp to patrol angle
-            if(Vector3.Angle(newRot * Vector3.forward, patrolRotation * Vector3.forward) <= patrolAngle)
+            if (Vector3.Angle(newRot * Vector3.forward, patrolRotation * Vector3.forward) <= patrolAngle / 2)
+            {
                 transform.rotation = newRot;
+                return true;
+            }
+            
+            return false;
         }
 
         private static Vector3 RandomConeDirection(Vector3 direction, float angle) => Quaternion.Euler(Random.insideUnitCircle * angle) * direction;
