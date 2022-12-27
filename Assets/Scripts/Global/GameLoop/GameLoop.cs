@@ -17,7 +17,7 @@ namespace GameJam.Global
             yield return new WaitForSeconds(0.5f);
             ToMenu();
             GlobalReferences.Player.battery.Charge(Mathf.Infinity);
-            yield return FadeTo(Color.white, 0.25f);
+            yield return StartCoroutine(FadeTo(Color.white, 0.25f));
         }
 
         public IEnumerator GameOver()
@@ -34,6 +34,8 @@ namespace GameJam.Global
             yield return StartCoroutine(FadeTo(Color.white, 0.5f));
         }
 
+        
+        // TODO Pause / Resume
         public IEnumerator Pause()
         {
             yield return StartCoroutine(FadeTo(Color.black, 0.5f));

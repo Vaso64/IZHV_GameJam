@@ -11263,6 +11263,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff61e043e88c4eb3b1ff616426e6d718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialForce: 0
+  initialTorque: 1
   EnergyAmount: 500
   energyBallIndicator: {fileID: 662758395253796297}
 --- !u!136 &7027881311017198073
@@ -11272,7 +11274,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5481263336997804819}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: b10fbfecb5bed574982499608ff918bd, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.06

@@ -127,3 +127,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f342e5bc7048f7ab74dfa61f4c61be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialForce: 0
+  initialTorque: 1

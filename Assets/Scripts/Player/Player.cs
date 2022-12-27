@@ -12,7 +12,7 @@ namespace GameJam.Player
     [RequireComponent(typeof(Rigidbody), typeof(Battery))]
     public class Player : MonoBehaviour
     {
-        [Range(0, 5)] public float maxVelocity = 2f; // m / s
+        [Range(0, 10)] public float maxVelocity = 2f; // m / s
 
         [Range(0, 180)] public float rotateSpeed = 90f; // deg / s
         

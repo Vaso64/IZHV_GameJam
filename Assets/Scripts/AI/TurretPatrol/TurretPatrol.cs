@@ -30,9 +30,9 @@ namespace GameJam.AI
 
             StateList = new()
             {
-                {EnemyStateType.Patrol, (0, 30, PatrolRoutine)},
-                {EnemyStateType.Alert,  (30, 80, AlertedRoutine)},
-                {EnemyStateType.Engage, (80, 100, EngageRoutine)},
+                {EnemyStateType.Patrol, (0, 20, PatrolRoutine)},
+                {EnemyStateType.Alert,  (20, 65, AlertedRoutine)},
+                {EnemyStateType.Engage, (65, 100, EngageRoutine)},
             };
         }
 

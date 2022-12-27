@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Extensions;
+using GameJam.Extensions;
 using GameJam.Global;
 using UnityEngine.UI;
 using GameJam.UI;

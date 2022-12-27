@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4325720971928274825}
   - component: {fileID: 4325720971928274826}
   - component: {fileID: 3972757036846200585}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1211,7 +1211,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 550
+  m_VersionIndex: 553
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1298,7 +1298,7 @@ GameObject:
   - component: {fileID: 4325720972738081296}
   - component: {fileID: 4325720972738081297}
   - component: {fileID: 2399015545028107922}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PatrolTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1333,11 +1333,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64436d954887dcf48aad53b4cd7dc080, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  awareness: 20
-  memory: 15
+  awareness: 35
+  memory: 10
   patrolAngle: 40
   spotAngle: 30
-  spotRange: 10
+  spotRange: 15
 --- !u!114 &8832819566855540777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9871,7 +9871,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 113
+  m_VersionIndex: 116
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -9953,7 +9953,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 934.1672
-  m_Range: 10
+  m_Range: 15
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -10134,10 +10134,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b2e03638cccfd624aaac52a1fec38503, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0
-  m_Pitch: 1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 0.8
   Loop: 1
   Mute: 0
   Spatialize: 0

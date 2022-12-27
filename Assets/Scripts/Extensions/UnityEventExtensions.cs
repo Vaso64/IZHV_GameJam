@@ -1,6 +1,6 @@
 ﻿using UnityEngine.Events;
 
-namespace Extensions
+namespace GameJam.Extensions
 {
     public static class UnityEventExtensions
     {
